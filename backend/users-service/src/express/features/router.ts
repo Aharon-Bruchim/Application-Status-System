@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { validateRequest, wrapController } from '../../utils/express/wrappers.js';
-import { FeaturesController } from './controller.js';
+import { UsersController } from './controller.js';
 import {
     createOneRequestSchema,
     deleteOneRequestSchema,
@@ -10,16 +10,16 @@ import {
     updateOneRequestSchema,
 } from './validations.js';
 
-export const featuresRouter = Router();
+export const usersRouter = Router();
 
-featuresRouter.get('/', validateRequest(getByQueryRequestSchema), wrapController(FeaturesController.getByQuery));
+usersRouter.get('/', validateRequest(getByQueryRequestSchema), wrapController(UsersController.getByQuery));
 
-featuresRouter.get('/count', validateRequest(getCountRequestSchema), wrapController(FeaturesController.getCount));
+usersRouter.get('/count', validateRequest(getCountRequestSchema), wrapController(UsersController.getCount));
 
-featuresRouter.get('/:id', validateRequest(getByIdRequestSchema), wrapController(FeaturesController.getById));
+usersRouter.get('/:id', validateRequest(getByIdRequestSchema), wrapController(UsersController.getById));
 
-featuresRouter.post('/', validateRequest(createOneRequestSchema), wrapController(FeaturesController.createOne));
+usersRouter.post('/', validateRequest(createOneRequestSchema), wrapController(UsersController.createOne));
 
-featuresRouter.put('/:id', validateRequest(updateOneRequestSchema), wrapController(FeaturesController.updateOne));
+usersRouter.put('/:id', validateRequest(updateOneRequestSchema), wrapController(UsersController.updateOne));
 
-featuresRouter.delete('/:id', validateRequest(deleteOneRequestSchema), wrapController(FeaturesController.deleteOne));
+usersRouter.delete('/:id', validateRequest(deleteOneRequestSchema), wrapController(UsersController.deleteOne));

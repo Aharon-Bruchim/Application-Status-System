@@ -21,4 +21,4 @@ const UserSchema = new mongoose.Schema<UserDocument>(
     },
 );
 
-export const UsersModel = mongoose.model<UserDocument>(config.mongo.featuresCollectionName, UserSchema);
+export const UsersModel = mongoose.model<UserDocument>(config.mongo.usersCollectionName, UserSchema);

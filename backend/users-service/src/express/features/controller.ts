@@ -10,7 +10,7 @@ import {
     updateOneRequestSchema,
 } from './validations.js';
 
-export class FeaturesController {
+export class UsersController {
     static getByQuery = async (req: TypedRequest<typeof getByQueryRequestSchema>, res: Response) => {
         const { step, limit, ...query } = req.query;
 

@@ -7,6 +7,6 @@ export const config = {
     },
     mongo: {
         uri: env.get('MONGO_URI').default('mongodb://localhost').required().asString(),
-        featuresCollectionName: env.get('FEATURES_COLLECTION_NAME').default('users').required().asString(),
+        usersCollectionName: env.get('USERS_COLLECTION_NAME').default('users').required().asString(),
     },
 };

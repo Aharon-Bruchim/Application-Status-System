@@ -6,7 +6,7 @@ services:
     ports:
       - 27017:27017
 
-  feature:
+  user-service:
     build: .
     environment:
       PORT: 8000
