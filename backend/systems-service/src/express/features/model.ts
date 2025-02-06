@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 import { config } from '../../config.js';
-import { FeatureDocument } from './interface.js';
+import { SystemDocument } from './interface.js';
 
-const FeaturesSchema = new mongoose.Schema<FeatureDocument>(
+const SystemsSchema = new mongoose.Schema<SystemDocument>(
     {
         name: {
             type: String,
@@ -10,6 +10,7 @@ const FeaturesSchema = new mongoose.Schema<FeatureDocument>(
         },
         status: {
             type: Boolean,
+            required: true,
         },
     },
     {
@@ -17,4 +18,4 @@ const FeaturesSchema = new mongoose.Schema<FeatureDocument>(
     },
 );
 
-export const FeaturesModel = mongoose.model<FeatureDocument>(config.mongo.featuresCollectionName, FeaturesSchema);
+export const SystemsModel = mongoose.model<SystemDocument>(config.mongo.systemsCollectionName, SystemsSchema);
